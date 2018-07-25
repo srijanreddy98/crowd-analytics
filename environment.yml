@@ -1,0 +1,4 @@
+name: heroku-jupyter
+dependencies:
+  - numpy
+  - pandas
