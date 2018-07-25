@@ -7,6 +7,7 @@ dependencies:
 - babel
 - cloudpickle
 - cryptography
+- dlib
 - hdf5
 - imagesize
 - intel-openmp
@@ -57,7 +58,6 @@ dependencies:
 - pip:
   - click==6.7
   - cython==0.28.4
-  - dlib==19.8.1
   - face-recognition==1.2.2
   - face-recognition-models==0.3.0
   - lxml==4.2.3
