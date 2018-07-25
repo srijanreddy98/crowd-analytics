@@ -1,6 +1,6 @@
 {
-  "name": "opexai",
-  "version": "1.0.0",
+  "name": "crowd-analytics",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {

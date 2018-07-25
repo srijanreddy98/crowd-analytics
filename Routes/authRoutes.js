@@ -1,85 +1,14 @@
 const fs = require('fs');
-const {move} = require('../serivces/copy');
-var XLSX = require('xlsx');
-const json2xls = require('json2xls');
-const { Idea, Intrested } = require('../Models/models');
-const { runShell, getEmotion } = require('../serivces/python');
+const {Intrested } = require('../Models/models');
+const { runShell } = require('../serivces/python');
 const mongoose = require('mongoose');
-var ObjectId = mongoose.Types.ObjectId();
-var user ;
+const { imageRoutes } = require('./imageRoutes');
+const { wordCloudRoutes } = require('./wordCloudRoutes');
 var routes = (app) => {
-    app.get('/api/wordcloud', (req, res) => {
-        var img = fs.readFileSync(__dirname + '/word1.png', { encoding: 'base64' });
-        // console.log(img);
-        // var bitmap = fs.readFileSync(__dirname + '/../word1.png');
-        // // convert binary data to base64 encoded string
-        // res.send(new Buffer(bitmap).toString('base64'));
-        res.send(img);
-    });
-    app.post('/api/images', (req, res) => {
-        fs.writeFile(__dirname + '/../FINAL/src/' + 'photo.jpg', req.body.image, { encoding: 'base64' }, function (err) {
-            if (err) console.log(err)
-            console.log('File created');
-            res.send({success: 'success'})
-        });
-        fs.writeFile(__dirname + '/../Attention/' + 'photo.jpg', req.body.image, { encoding: 'base64' }, function (err) {
-            if (err) console.log(err);
-        });
-        fs.writeFile(__dirname + '/../people_count/' + 'photo.jpg', req.body.image, { encoding: 'base64' }, function (err) {
-            if (err) console.log(err);
-        });
-    });
-    app.get('/api/idea', (req, res) => {
-        Idea.find({}).then(
-            docs => res.send(docs),
-            err => res.send(err)
-        )
-    });
-    app.post('/api/idea', (req, res) => {
-        console.log(req.body);
-        // res.send(req.body);
-        idea = new Idea({
-            title: req.body.title,
-            description: req.body.description
-        });
-        idea.save().then(
-            re => {
-            Idea.find({}).then(
-                (docs) => {
-                    var arr = [];
-                    for (i of docs) {
-                        var k = {
-                            SuggestionID: i['_id'],
-                            Created: ObjectId.getTimestamp(i['_id']),
-                            TITLE: i.title,
-                            Description: i.description,
-                            Language:'en',
-                            REFERENCE: "64",
-                            Status: 'good',
-                        }; arr.push(k)
-                    }
-                    var xls = json2xls(arr);
-                    fs.writeFileSync(__dirname + '/../idea_export.xlsx', xls, 'binary');
-                    runShell();
-            });
-    });
-    res.send(req.body);
-});
-    app.get('/api/user', (req, res) => {
-        console.log(req.query);
-        user = req.query.name;
-        res.send(req.query);
-    });
-    app.get('/api/currentuser', (req, res) => {
-        res.send(user);
-    });
+    imageRoutes(app);
+    wordCloudRoutes(app);
     app.post('/api/statistic', (req, res) => {
         console.log(req.body);
-        // var ins = Intrested({
-        //     countA: 0,
-        //     countNA: 0
-        // });
-        // ins.save();
         Intrested.find().sort({ "_id": -1 }).limit(1).then((post) => {
             if (post[0]) {
                 const now = Date.now();
@@ -123,7 +52,6 @@ var routes = (app) => {
 
 
         });
-        // res.send(req.body);
     });
     app.get('/api/stats', (req, res) => {
         console.log(typeof(+req.query.no));
