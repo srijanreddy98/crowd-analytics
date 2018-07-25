@@ -56,7 +56,6 @@ dependencies:
 - yaml
 - pip:
   - click==6.7
-  - dlib>=19.3.0
   - cython==0.28.4
   - face-recognition==1.2.2
   - face-recognition-models==0.3.0
