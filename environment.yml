@@ -1,19 +1,82 @@
-name: heroku-jupyter
+name: tfdeeplearning
+channels:
+- conda-forge
+- defaults
 dependencies:
-  # bind notebook version (compatibility to pgcontents)
-  - notebook = 4
-  - ipywidgets
-  - requests
-  # bind ipython version (compatibility to pgcontents)
-  - ipython = 5
-  # bind tornado version (websocket problems)
-  - tornado = 4.5
-  # get dependencies for pgcontents
-  - certifi
-  - click
-  - cryptography 
-  - mako
-  - psycopg2
-  - six
-  - sqlalchemy
-  - nose
+- python=3.6.5
+- babel
+- cloudpickle
+- cryptography
+- hdf5
+- imagesize
+- intel-openmp
+- jpeg
+- jsonschema
+- keras=2.1.6
+- kiwisolver
+- lazy-object-proxy
+- libpng
+- libprotobuf
+- libsodium
+- libtiff
+- m2w64-gcc-libgfortran
+- m2w64-gcc-libs
+- m2w64-gcc-libs-core
+- m2w64-gmp
+- m2w64-libwinpthread-git
+- matplotlib
+- mkl
+- mkl_fft
+- mkl_random
+- msys2-conda-epoch
+- numpy
+- numpy-base
+- numpydoc
+- opencv=3.3.1
+- openssl
+- pandas
+- path.py
+- pickleshare
+- pillow
+- pip
+- pyopenssl
+- pyqt
+- pysocks
+- python-dateutil
+- pytz
+- pywinpty
+- requests
+- rope
+- scikit-learn
+- scipy
+- setuptools
+- simplegeneric
+- six
+- sqlite
+- tensorboard=1.8.0
+- tensorflow=1.8.0
+- tensorflow-base=1.8.0
+- tk
+- tornado
+- urllib3
+- wheel
+- yaml
+- pip:
+  - click==6.7
+  - cython==0.28.4
+  - dlib==19.8.1
+  - face-recognition==1.2.2
+  - face-recognition-models==0.3.0
+  - lxml==4.2.3
+  - mkl-fft==1.0.0
+  - mkl-random==1.0.1
+  - nsetools==1.0.5
+  - pandas-datareader==0.6.0
+  - prompt-toolkit==1.0.15
+  - requests-file==1.4.3
+  - requests-ftp==0.3.1
+  - tensorflow-tensorboard==0.1.6
+  - win-inet-pton==1.0.1
+  - win-unicode-console==0.5
+prefix: C:\Users\Chintu\Anaconda3\envs\tfdeeplearning
+
