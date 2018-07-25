@@ -55,8 +55,8 @@ dependencies:
 - wheel
 - yaml
 - pip:
-  - boost==0.1
   - cmake==0.7.1
+  - boost==0.1
   - boost-py
   - dlib>=19.3.0
   - numpy
