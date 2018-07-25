@@ -61,10 +61,8 @@ dependencies:
   - face-recognition==1.2.2
   - face-recognition-models==0.3.0
   - lxml==4.2.3
-  - mkl-fft==1.0.0
-  - mkl-random==1.0.1
-  - nsetools==1.0.5
-  - pandas-datareader==0.6.0
+  - mkl-fft
+  - mkl-random
   - prompt-toolkit==1.0.15
   - requests-file==1.4.3
   - requests-ftp==0.3.1
