@@ -29,7 +29,6 @@ var graphDataRoutes = (app) => {
                 } else {
                     var time = +post[0].timeStamp;
                     while (t > 1) {
-                        console.log('here2');
                         var i = Intrested({
                             timeStamp: time + 600000,
                             countA: 0,
@@ -91,7 +90,6 @@ var graphDataRoutes = (app) => {
                 } else {
                     var time = +post[0].timeStamp;
                     while (t > 1) {
-                        console.log('here2');
                         var i = Intrested({
                             timeStamp: time + 600000,
                             countA: 0,

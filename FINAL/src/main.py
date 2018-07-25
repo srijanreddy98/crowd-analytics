@@ -18,10 +18,10 @@ from req.preprocessor import preprocess_input
 import tensorflow as tf
 import sys
 import glob
-path = os.getcwd()+'\\' #+ 'FINAL\\src\\'
-path = os.path.join(path, 'FINAL','src')
-face_cascade = cv2.CascadeClassifier(path + '/haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier(path+ '/haarcascade_eye.xml')
+path = os.getcwd()+'\\'# + 'FINAL\\src\\'
+# path = os.path.join(path, 'FINAL','src')
+face_cascade = cv2.CascadeClassifier(path + 'haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier(path+ 'haarcascade_eye.xml')
 print(path + '/haarcascade_frontalface_default.xml',
       path + '/haarcascade_eye.xml')
 face = []
@@ -165,7 +165,7 @@ def atten(eyes,roi_color):
         eye_count+=1
         bgr_image = cv2.cvtColor(rgb_image, cv2.COLOR_RGB2BGR)
         # cv2.imshow('window_frame', bgr_image)
-        return attentive
+    return attentive
 
 
 #--------------------------------- END ------------------------------------
@@ -214,10 +214,18 @@ gender_window = []
 # video_capture = cv2.VideoCapture(0)
 while True:
     try:
-        bgr_image = cv2.imread(path+'/photo.jpg')
+        testp = path +'3.txt'
+        print(os.path.exists(testp))
+        
+        if(os.path.exists(testp)):
+            bgr_image = cv2.imread(path+'1.jpg')
+        else:
+            bgr_image = cv2.imread(path+'2.jpg')
+        # bgr_image = cv2.imread(path+'/photo.jpg')
         gray_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2GRAY)
         rgb_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2RGB)
         faces = detect_faces(face_detection, gray_image)
+        print(len(faces))
 
         face = []
         face2 = []
@@ -227,6 +235,7 @@ while True:
         for face_coordinates in faces:
 
             x1, x2, y1, y2 = apply_offsets(face_coordinates, gender_offsets)
+
             rgb_face = rgb_image[y1:y2, x1:x2]
 
             bgr_face = bgr_image[y1:y2, x1:x2]
@@ -345,4 +354,5 @@ while True:
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     except:
+        print('except')
         continue

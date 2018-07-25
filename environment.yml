@@ -7,7 +7,6 @@ dependencies:
 - cloudpickle
 - hdf5
 - imagesize
-- intel-openmp
 - jpeg
 - jsonschema
 - keras=2.1.6
