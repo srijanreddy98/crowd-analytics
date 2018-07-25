@@ -1,5 +1,4 @@
-const fs = require('fs');
-const mongoose = require('mongoose');
+const fs = require('fs');;
 var imageRoutes = (app) => {
     app.post('/api/images', (req, res) => {
         fs.writeFile(__dirname + '/../FINAL/src/' + 'photo.jpg', req.body.image, {
