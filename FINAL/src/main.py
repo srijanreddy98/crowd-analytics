@@ -18,7 +18,7 @@ from req.preprocessor import preprocess_input
 import tensorflow as tf
 import sys
 import glob
-path = os.getcwd()+'\\'# + 'FINAL\\src\\'
+path = os.getcwd()+'\\' + 'FINAL\\src\\'
 # path = os.path.join(path, 'FINAL','src')
 face_cascade = cv2.CascadeClassifier(path + 'haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier(path+ 'haarcascade_eye.xml')
@@ -324,10 +324,10 @@ while True:
             face2.append({"face": cordi, "attentive": atten(eyes, roi_color)})
             import json
             import codecs
-            with open('4forces.json', 'wb') as f:
+            with open(path + '4forces.json', 'wb') as f:
                 # print('here')
                 json.dump(face, codecs.getwriter('utf-8')(f), ensure_ascii=False)
-            with open('4forces2.json', 'wb') as f:
+            with open(path + '4forces2.json', 'wb') as f:
                 # print('here')
                 json.dump(face2, codecs.getwriter('utf-8')(f), ensure_ascii=False)
 
