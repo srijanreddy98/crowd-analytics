@@ -22,8 +22,8 @@ MongoDB: MongoDB comunity server will be enough.\
 
 Follow the below steps to run the code in your machines.\
 
-1.First you need to create a conda environment and install the dependencies. Find the environment.yml file in the repo and run to install the dependencies. https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file.\Refer the above link to set up the environment for all the dependencies to work.\
-2.First download the zip file.\
+1.First you need to create a conda environment and install the dependencies. Find the environment.yml file in the repo and run to install the dependencies. https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file. <br> Refer the above link to set up the environment for all the dependencies to work.\
+2.Then download the zip file.\
 3.Go into the folder.\
 4.Do npm install.\
 5.And then npm start.\
