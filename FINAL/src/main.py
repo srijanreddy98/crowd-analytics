@@ -215,7 +215,6 @@ gender_window = []
 while True:
     try:
         testp = path +'3.txt'
-        print(os.path.exists(testp))
         
         if(os.path.exists(testp)):
             bgr_image = cv2.imread(path+'1.jpg')
@@ -225,7 +224,6 @@ while True:
         gray_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2GRAY)
         rgb_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2RGB)
         faces = detect_faces(face_detection, gray_image)
-        print(len(faces))
 
         face = []
         face2 = []
