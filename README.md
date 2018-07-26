@@ -10,9 +10,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 	
 Minimum Specs:	Quad-Core CPU,	16GB RAM, High Resolution Webcam.\
-Recommended Specs:	6/8 Core CPU,	32GB RAM, Camera -DSLR with high resolution, and better pixel count.\
+Recommended Specs:  6/8 Core CPU,	32GB RAM, Camera -DSLR with high resolution, and better pixel count.\
 Software Requirements:\
-OS:	Any OS will do (preffered windows)\
+OS:	Any OS will do (preferred windows)\
 Python (Anaconda distibution): Should have the ability to install dependencies via pip/ conda\
 Node.js (version >= 8.9.3: Should have the ability to install dependencies via npm\
 MongoDB: MongoDB comunity server will be enough.\
@@ -22,10 +22,11 @@ MongoDB: MongoDB comunity server will be enough.\
 
 Follow the below steps to run the code in your machines.\
 
-1.First download the zip file.\
-2.Go into the folder.\
-3.Do npm install.\
-4.And then npm start.\
-5.Then once you see server is up.\
-6.Go to browser and localhost:3000/dashboard. 
+1.First you need to create a conda environment and install the dependencies. Find the environment.yml file in the repo and run to install the dependencies. https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file.\Refer the above link to set up the environment for all the dependencies to work.\
+2.First download the zip file.\
+3.Go into the folder.\
+4.Do npm install.\
+5.And then npm start.\
+6.Then once you see server is up.\
+7.Go to browser and localhost:3000/dashboard. 
 
