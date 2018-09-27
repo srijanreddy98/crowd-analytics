@@ -20,7 +20,6 @@ if (cluster.isMaster) {
 
     // Setting Mongoose Parameters and connecting to database
     mongoose.Promise = global.Promise;
-    // mongoose.connect('mongodb://srijanreddy98:opexai@ds119110.mlab.com:19110/crowdanalytics');
     mongoose.connect('mongodb://localhost:27017/crowdAnalytics');
 
     const app = express();
