@@ -28,6 +28,6 @@ Follow the below steps to run the code in your machines.\
 4.Do npm install.\
 5.And then npm start.\
 6.Then once you see server is up.\
-7.Go to browser and localhost:3000/dashboard.
+7.Go to browser and localhost:3000/dashboard. \
 8.Give it a minute or two load up the python scripts and you can see the results in the browser.
 
